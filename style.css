@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #6366f1;
+}
+
+li {
+    list-style: none;
+}
+
+h2 {
+    color: #3e4455;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+/* Sidebar Layout & Functionality */
+
+#sidebar input[type="checkbox"]:checked~.sidebar-nav {
+    width: 260px;
+    min-width: 260px;
+}
+
+#sidebar input[type="checkbox"]:not(:checked)~* .sidebar-link span {
+    display: none;
+}
+
+/*------------ Dashboard Navbar ------------*/
+
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*------------ Dashboard Content ------------*/
+
+/*------------ Table Layout ------------*/
+
+#posts {
+    border-collapse: collapse;
+    margin: 30px auto;
+    width: 100%;
+}
+
+#posts thead tr {
+    color: #FFF;
+    text-align: left;
+    background-color: #293b5f;
+}
+
+#posts th,
+#posts td {
+    padding: 12px 15px;
+}
+
+#posts tbody tr:nth-of-type(2n) {
+    background-color: #f5f5f5;
+}
+
+/*------------ Footer ------------*/
+
+/*------------ Responsive ------------*/
+
+@media (min-width: 768px) {
+
+    /* Navbar Form */
+
+    .dashboard-navbar form {
+        display: block;
+        max-width: 320px;
+    }
+
+    .nav-search {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .nav-search .search-query {
+        flex: 1 1 auto;
+        width: 1%;
+        height: calc(1.5em + .9rem + 2px);
+        padding: 0 20px;
+        border: none;
+        color: #3e4455;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .nav-search .search-query:focus-visible {
+        outline: none;
+    }
+
+    .nav-search .btn {
+        border: 0;
+        background-color: #727cf5;
+        color: #FFF;
+        padding: 0.45rem 0.9rem;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+    }
+
+    /* Dashboard Content  */
+
+    .dashboard-card {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Social Icons */
+
+    .social-icons {
+        display: block;
+    }
+
+    .social-icons li:not(:last-child) {
+        margin-right: 0.5rem;
+        border-right: 1px solid #000;
+        padding-right: 0.7rem;
+    }
+
+    .social-icons li {
+        display: inline-block;
+    }
+
+    .social-icons li a {
+        color: #000;
+    }
+}
