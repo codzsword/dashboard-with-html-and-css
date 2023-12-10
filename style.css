@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
 *,
 ::after,
@@ -34,19 +34,116 @@ body {
     display: flex;
 }
 
-/* Sidebar Layout & Functionality */
+/* Sidebar layout & functionality */
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #293b5f;
+}
+
+#toggler {
+    display: none;
+}
+
+.toggle-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #FFF;
+    padding: 1rem 1.5rem;
+    width: max-content;
+}
+
+.sidebar-nav {
+    width: 85px;
+    min-width: 85px;
+    padding: 25px 0;
+    flex: 1 1 auto;
+    transition: all .25s ease-in-out;
+}
 
 #sidebar input[type="checkbox"]:checked~.sidebar-nav {
     width: 260px;
     min-width: 260px;
 }
 
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    display: block;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i {
+    font-size: 1.1re;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .075);
+    border-left: 3px solid #3b7ddd;
+}
+
 #sidebar input[type="checkbox"]:not(:checked)~* .sidebar-link span {
     display: none;
 }
 
-/*------------ Dashboard Navbar ------------*/
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
 
+/* Dashboard Navbar */
+
+.dashboard-navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 1rem 1.5rem;
+    background-color: #f5f5f5;
+}
+
+.dashboard-navbar form {
+    display: none;
+}
+
+.dashboard-navbar .navbar-content {
+    display: flex;
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+.dashboard-navbar .main-nav {
+    margin-left: auto;
+}
+
+.user-link {
+    position: relative;
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+}
+
+.user-link-dropdown {
+    display: none;
+}
+
+.user-link:hover .user-link-dropdown {
+    position: absolute;
+    right: 0;
+    left: auto;
+    min-width: 10rem;
+    background-color: #FFF;
+    display: block;
+    border: 1px solid #d2d2d2;
+    box-shadow: 0 .1rem .2rem rgba(255, 255, 255, .075);
+    animation: fade .5s;
+}
 
 @keyframes fade {
     0% {
@@ -58,7 +155,67 @@ body {
     }
 }
 
-/*------------ Dashboard Content ------------*/
+.user-link-dropdown a {
+    display: block;
+    width: 100%;
+    color: #495057;
+    padding: 0 0.75rem;
+    font-size: 1rem;
+    margin-top: 0.75rem;
+}
+
+/* Dashboard Content */
+
+.content {
+    padding: 2rem;
+    flex: 1 1 auto;
+}
+
+.dashboard-card {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 1rem 0;
+    display: grid;
+    gap: 2rem;
+}
+
+.card {
+    background-color: #f5f5f5;
+    padding: 1.5rem 1rem;
+    color: #000;
+    border-radius: 5px;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.amount {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.card:hover {
+    background-color: #293b5f;
+    color: #FFF;
+    transform: translateY(-10.5px);
+}
+
+.text-success-bg {
+    background-color: #71c664;
+    padding: 0.25rem 0.35rem;
+    margin-right: 0.375rem;
+    font-size: 0.715rem;
+    color: #FFF;
+    border-radius: 5px;
+}
+
+.badge-text {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
 
 /*------------ Table Layout ------------*/
 
@@ -83,9 +240,24 @@ body {
     background-color: #f5f5f5;
 }
 
-/*------------ Footer ------------*/
+/* Footer */
 
-/*------------ Responsive ------------*/
+.footer-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    align-items: center;
+    overflow-x: auto;
+    justify-content: space-between;
+    background-color: #f5f5f5;
+    padding: 1rem 2rem;
+}
+
+.social-icons {
+    display: none;
+}
+
+/* Responsive */
 
 @media (min-width: 768px) {
 
